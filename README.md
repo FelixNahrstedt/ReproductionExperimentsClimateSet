@@ -1,4 +1,4 @@
-# ClimateSet Superemulation Reproduction Package
+# ClimateSet Superemulation Reproduction Repo
 
 Recently, [Kaltenborn et al.](https://climateset.github.io/) introduced [ClimateSet](https://climateset.github.io/), enabling ML engineers to access consistent data from climate models in the Input4MIPs and CMIP6 Archives. This data can be used for various tasks such as predicting more specific climate scenarios, downscaling, or multi-model emulation (Superemulation). Superemulation can potentially benefit climate modeling by significantly speeding up multi-model forecasting and enhancing the representation of the actual climate system through effective model combination. However, scaling up the number of climate models has led to resource problems, especially when scaling up to 36 models.
 
