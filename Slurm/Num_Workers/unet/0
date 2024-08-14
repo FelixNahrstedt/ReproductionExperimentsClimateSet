@@ -14,7 +14,10 @@
 
 #SBATCH --time=3:30:00                                  # set runtime
 
-#SBATCH -o /home/mila/f/felix-andreas.nahrstedt/Slurm/NW0-SC6-MPT-A100-MPT-unet.out        # set log dir to home
+#SBATCH -o ${SLURM_LOG_DIR}/NW0-SC6-MPT-A100-MPT-unet.out        # set log dir to home
+
+# Source the configuration file
+source Slurm/slurm_paths.conf
 
 
 EXP_NAME=$1
@@ -65,9 +68,7 @@ export HYDRA_FULL_ERROR=1
 echo "Running python test.py ..."
 srun python emulator/run.py experiment=Scaling_Experiments/Num_Workers/unet/superemulator_NW0.yaml  seed=3423 # seed=1234
 
-
-# 9. Copy output to scratch
-#cp /home/mila/f/felix-andreas.nahrstedt/Slurm/SC6-MPT-unet_out.out 
+ 
 
 # 10. Experiment is finished
 

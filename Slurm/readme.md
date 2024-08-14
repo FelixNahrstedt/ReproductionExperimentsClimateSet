@@ -1,0 +1,2 @@
+# Slurm files
+The slurm files are the execution files for the Mila Cluster. They work together with the Scaling experiments files as well as the official ClimateSet Repository. If you would like to use these slurm files on another cluster, you will probably need to adapt the files accordingly. 

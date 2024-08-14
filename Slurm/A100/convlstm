@@ -14,7 +14,10 @@
 
 #SBATCH --time=48:00:00                                  # set runtime
 
-#SBATCH -o /home/mila/f/felix-andreas.nahrstedt/Slurm/SC6-A100-basetest-convlstm.out        # set log dir to home
+#SBATCH -o ${SLURM_LOG_DIR}/SC6-A100-basetest-convlstm.out        # set log dir to home
+
+# Source the configuration file
+source Slurm/slurm_paths.conf
 
 
 EXP_NAME=$1
@@ -67,9 +70,7 @@ export HYDRA_FULL_ERROR=1
 echo "Running python test.py ..."
 python emulator/run.py experiment=superemulator/superemulator_convlstm_tas+pr_run-02.yaml  seed=1234 # seed=3423
 
-
-# 9. Copy output to scratch
-#cp /home/mila/f/felix-andreas.nahrstedt/Slurm/SC6-A100-basetest-convlstm_out.out 
+ 
 
 # 10. Experiment is finished
 

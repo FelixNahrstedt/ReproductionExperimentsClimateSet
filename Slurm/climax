@@ -14,8 +14,10 @@
 
 #SBATCH --time=48:00:00                                  # set runtime
 
-#SBATCH -o /home/mila/f/felix-andreas.nahrstedt/Slurm/SC6-basetest-climax.out        # set log dir to home
+#SBATCH -o ${SLURM_LOG_DIR}/SC6-basetest-climax.out        # set log dir to home
 
+# Source the configuration file
+source Slurm/slurm_paths.conf
 
 EXP_NAME=$1
 DL_FRAMEWORK="torch"
@@ -66,11 +68,5 @@ export NCCL_BLOCKING_WAIT=1 #Pytorch Lightning uses the NCCL backend for inter-G
 export HYDRA_FULL_ERROR=1
 echo "Running python test.py ..."
 srun  python emulator/run.py experiment=superemulator/superemulator_climax_tas+pr_run-02.yaml seed=1234 #seed=3423
-
-
-# 9. Copy output to scratch
-#cp /home/mila/f/felix-andreas.nahrstedt/Slurm/SC6-basetest-climax_out.out 
-
-# 10. Experiment is finished
 
 echo "Experiment $EXP_NAME is concluded."

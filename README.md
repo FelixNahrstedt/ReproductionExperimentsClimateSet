@@ -1,3 +1,5 @@
+THESIS WORK AVAILABLE UNDER: https://lutpub.lut.fi/handle/10024/168086 
+
 # ClimateSet Superemulation Reproduction Repo
 
 Recently, [Kaltenborn et al.](https://climateset.github.io/) introduced [ClimateSet](https://climateset.github.io/), enabling ML engineers to access consistent data from climate models in the Input4MIPs and CMIP6 Archives. This data can be used for various tasks such as predicting more specific climate scenarios, downscaling, or multi-model emulation (Superemulation). Superemulation can potentially benefit climate modeling by significantly speeding up multi-model forecasting and enhancing the representation of the actual climate system through effective model combination. However, scaling up the number of climate models has led to resource problems, especially when scaling up to 36 models.
@@ -14,6 +16,6 @@ The results show a drastic reduction in GPU/CPU utilization, increased accuracy,
 
 To reproduce the experiments, simply 
 1. Clone the ClimateSet repo and follow the .Readme there
-2. Put any of the experiments (.yaml) that you would like to reproduce into the ClimateSet/emulator/configs/experiment/... folder
+2. Drop the Scaling_Experiments folder into the ClimateSet/emulator/configs/experiment/... folder
 3. Execute the respective Slurm file from the ClimateSet/... folder
 4. The DataScience .ipynb files are specific for the experiments run for the Superemulator Scaling experiments, If you would like to run them for one of your experiments, simply edit the first code block of the .ipynb files so that you get the data from your Wandb run through their API 
